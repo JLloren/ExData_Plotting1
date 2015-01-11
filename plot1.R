@@ -1,3 +1,4 @@
+#plot1
 setwd("C:\\Users\\Jack Sparrow\\Desktop\\PhD\\COURSERA\\EXPLORATORY DATA")
 datos<-unzip("exdata-data-household_power_consumption.zip")
 data_all<-read.table(datos,header=TRUE,sep=";",na.strings="?", stringsAsFactors=FALSE, dec=".")

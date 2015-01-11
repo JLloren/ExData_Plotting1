@@ -1,0 +1,10 @@
+#plot2
+setwd("C:\\Users\\Jack Sparrow\\Desktop\\PhD\\COURSERA\\EXPLORATORY DATA")
+datos<-unzip("exdata-data-household_power_consumption.zip")
+data_all<-read.table(datos,header=TRUE,sep=";",na.strings="?", stringsAsFactors=FALSE, dec=".")
+data<-subset(data_all,Date=="1/2/2007"|Date=="2/2/2007")
+dateandtime<-strptime(paste(data$Date,data$Time,sep=" "),"%d/%m/%Y %H:%M:%S")
+Sys.setlocale("LC_TIME", "English")
+png("plot2.png", width=480, height=480)
+plot(dateandtime,data$Global_active_power,type="l",ylab="Global Active Power (kilowatts)",xlab="")
+dev.off()
